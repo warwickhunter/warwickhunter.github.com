@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Webauthn support detection</h1>
+<script>
+if (window.PublicKeyCredential) {
+ PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
+   .then((available) => {
+     if (available) {
+         document.body.innerHTML = "<h1>Webauthn support detection</h1>Supported.";
+     } else {
+         document.body.innerHTML = "<h1>Webauthn support detection</h1>WebAuthn supported, Platform Authenticator *not* supported.";
+     }
+   })
+   .catch((err) => document.body.innerHTML = "<h1>Webauthn support detection</h1>Something went wrong.");
+} else {
+    document.body.innerHTML = "<h1>Webauthn support detection</h1>Not supported.";
+}
+</script>
+</body>
+</html>
