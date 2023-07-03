@@ -7,9 +7,9 @@ if (window.PublicKeyCredential) {
  PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
    .then((available) => {
      if (available) {
-         document.body.innerHTML = "<h1>Webauthn support detection</h1>Supported. <p><a href="index.html">Up</a></p>";
+         document.body.innerHTML = "<h1>Webauthn support detection</h1>Supported. <body><p><a href="index.html">Up</a></p></body>";
      } else {
-         document.body.innerHTML = "<h1>Webauthn support detection</h1>WebAuthn supported, Platform Authenticator *not* supported. <p><a href="index.html">Up</a></p>";
+         document.body.innerHTML = "<h1>Webauthn support detection</h1>WebAuthn supported, Platform Authenticator *not* supported. <body><p><a href="index.html">Up</a></p></body>";
      }
    })
    .catch((err) => document.body.innerHTML = "<h1>Webauthn support detection</h1>Something went wrong.");
