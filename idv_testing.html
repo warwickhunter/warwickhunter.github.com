@@ -1,8 +1,74 @@
 <html>
 <body>
 <h1>Links for IDV testing</h1>
-  <p><a href="v2/success.html">IDV Success</a></p>
-  <p><a href="v2/failure.html">IDV Failure</a></p>
-  <p><a href="index.html">Up</a></p>
+<p><a href="index.html">Up</a></p>
+
+You can set the values returned from the PeopleApi <code>/people/process_idv_status_change</code> simulator.<br>
+Before these values will take effect you must enable the feature in the Debug settings screen of the app.
+
+    <form action="idv/v2/success.html" method="get">
+
+        <h5>Status</h5>
+        <input type="radio" id="success" name="status" value="success" checked="checked">
+        <label for="success">Success</label><br>
+
+        <input type="radio" id="name_mismatch" name="status" value="name_mismatch">
+        <label for="name_mismatch">Name Mismatch</label><br>
+
+        <input type="radio" id="failed" name="status" value="failed">
+        <label for="failed">Failed</label><br>
+
+        <h5>Attempts</h5>
+        <label for="attempts_remaining">Attempts remaining:</label>
+        <input type="number" id="attempts_remaining" name="attempts_remaining" value="3"><br>
+
+        <label for="can_attempt_again">Can attempt again?</label>
+        <input type="checkbox" id="can_attempt_again" name="can_attempt_again" checked="checked"><br>
+
+        <h5>Acceptable Names</h5>
+        These values are only applicable for status of Name Mismatch<br>
+        <label for="first_name">First name:</label>
+        <input type="text" id="first_name" name="first_name" value="Ted"><br>
+        <label for="last_name">Last name:</label>
+        <input type="text" id="last_name" name="last_name" value="Bear"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+<pre>
+set the change status result: success, name update required, failed
+set the user verification state: verified, name mismatch, not attempted, failed, reset required
+set acceptableNames
+set attemptsRemaining
+set canAttemptVerificationAgain
+
+how?
+- this web page allows user to control what is returned from people api.
+- if a debug setting is enabled then the people api goes to the fake backend for the
+  response to the change idv status and user verification json blobs. The IDV url is also
+  changed to go to this site
+-
+
+Process IDV Change Status result
+status {
+    Success
+    NameUpdateRequired
+    Failed
+}
+acceptableNames
+attemptsRemaining
+canAttemptVerificationAgain
+
+User Verification response from PeopleApi
+status {
+    VERIFIED,
+    NAME_MISMATCH,
+    NOT_ATTEMPTED,
+    IDV_FAILED,
+    RESET,
+    RESET_REQUIRED
+}
+attemptsRemaining
+canAttemptAgain
+</pre>
 </body>
 </html>
