@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <body>
 <h1>Links for IDV testing</h1>
 <p><a href="index.html">Up</a></p>
@@ -34,41 +34,5 @@ Before these values will take effect you must enable the feature in the Debug se
 
         <input type="submit" value="Submit">
     </form>
-<pre>
-set the change status result: success, name update required, failed
-set the user verification state: verified, name mismatch, not attempted, failed, reset required
-set acceptableNames
-set attemptsRemaining
-set canAttemptVerificationAgain
-
-how?
-- this web page allows user to control what is returned from people api.
-- if a debug setting is enabled then the people api goes to the fake backend for the
-  response to the change idv status and user verification json blobs. The IDV url is also
-  changed to go to this site
--
-
-Process IDV Change Status result
-status {
-    Success
-    NameUpdateRequired
-    Failed
-}
-acceptableNames
-attemptsRemaining
-canAttemptVerificationAgain
-
-User Verification response from PeopleApi
-status {
-    VERIFIED,
-    NAME_MISMATCH,
-    NOT_ATTEMPTED,
-    IDV_FAILED,
-    RESET,
-    RESET_REQUIRED
-}
-attemptsRemaining
-canAttemptAgain
-</pre>
 </body>
 </html>
