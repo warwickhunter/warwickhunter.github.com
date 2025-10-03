@@ -1,4 +1,22 @@
 <html lang="en">
+<head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    label {
+        display: inline-block;
+        width: 160px;
+        padding: 5px;
+    }
+    div {
+        padding: 5px;
+        border: 2px solid gray;
+        width: 30%;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
 <body>
 <h1>IDV testing</h1>
 <p><a href="index.html">Up</a></p>
@@ -8,7 +26,8 @@ Before these values will take effect you must enable the feature in the Debug se
 
     <form action="idv/v2/success.html" method="get">
 
-        <h5>Status</h5>
+        <h4>Status</h4>
+        <div>
         <input type="radio" id="success" name="status" value="success" checked="checked">
         <label for="success">Success</label><br>
 
@@ -17,34 +36,40 @@ Before these values will take effect you must enable the feature in the Debug se
 
         <input type="radio" id="failed" name="status" value="failed">
         <label for="failed">Failed</label><br>
+        </div>
 
-        <h5>Attempts and Resets</h5>
+        <h4>Attempts and Resets</h4>
+        <div>
         <label for="attempts_remaining">Attempts remaining:</label>
         <input type="number" id="attempts_remaining" name="attempts_remaining" value="3"><br>
 
         <label for="can_attempt_again">Can attempt again?</label>
-        <input type="checkbox" id="can_attempt_again" name="can_attempt_again" checked="checked"><br><br>
+        <input type="checkbox" id="can_attempt_again" name="can_attempt_again" checked="checked"><br>
 
         <label for="resets_remaining">Resets remaining:</label>
         <input type="number" id="resets_remaining" name="resets_remaining" value="3"><br>
 
         <label for="can_reset">Can reset?</label>
         <input type="checkbox" id="can_reset" name="can_reset" checked="checked"><br>
+        </div>
 
-        <h5>Acceptable Names</h5>
-        These values are only applicable for status of Name Mismatch<br>
+
+        <h4>Acceptable Names</h4>
+        <div>
+        These values are only applicable for status of Name Mismatch<br><br>
         <label for="first_name0">First name:</label>
         <input type="text" id="first_name0" name="first_name" value="Ted"><br>
         <label for="last_name0">Last name:</label>
-        <input type="text" id="last_name0" name="last_name" value="Bear"><br><br>
+        <input type="text" id="last_name0" name="last_name" value="Bear"><br>
         <label for="first_name1">First name:</label>
         <input type="text" id="first_name1" name="first_name" value="Fred"><br>
         <label for="last_name1">Last name:</label>
-        <input type="text" id="last_name1" name="last_name" value="Bear"><br><br>
+        <input type="text" id="last_name1" name="last_name" value="Bear"><br>
         <label for="first_name2">First name:</label>
         <input type="text" id="first_name2" name="first_name" value="Teddy"><br>
         <label for="last_name1">Last name:</label>
-        <input type="text" id="last_name2" name="last_name" value="Tischbier"><br><br>
+        <input type="text" id="last_name2" name="last_name" value="Tischbier"><br>
+        </div>
 
         <input type="submit" value="Submit">
     </form>
